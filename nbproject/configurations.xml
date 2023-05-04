@@ -16,6 +16,7 @@
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
       </logicalFolder>
       <itemPath>toner.h</itemPath>
+      <itemPath>TMR0ALT.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

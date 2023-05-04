@@ -19,7 +19,7 @@
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.36 and above
         MPLAB 	          :  MPLAB X 6.00
-*/
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -42,37 +42,37 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 
 /**
   Section: Included Files
-*/
+ */
 
 #include <xc.h>
 #include "tmr0.h"
 
 /**
   Section: Global Variables Definitions
-*/
+ */
 
 volatile uint8_t timer0ReloadVal;
 void (*TMR0_InterruptHandler)(void);
+
 /**
   Section: TMR0 APIs
-*/
+ */
 
-void TMR0_Initialize(void)
-{
+void TMR0_Initialize(void) {
     // Set TMR0 to the options selected in the User Interface
-	
+
     // PSA assigned; PS 1:256; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD7 & 0x3F)); 
-	
+    OPTION_REG = (uint8_t) ((OPTION_REG & 0xC0) | (0xD7 & 0x3F));
+
     // TMR0 0; 
     TMR0 = 0x00;
-	
+
     // Load the TMR value to reload variable
-    timer0ReloadVal= 0;
+    timer0ReloadVal = 0;
 
     // Clear Interrupt flag before enabling the interrupt
     INTCONbits.TMR0IF = 0;
@@ -84,8 +84,7 @@ void TMR0_Initialize(void)
     TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
 }
 
-uint8_t TMR0_ReadTimer(void)
-{
+uint8_t TMR0_ReadTimer(void) {
     uint8_t readVal;
 
     readVal = TMR0;
@@ -93,44 +92,39 @@ uint8_t TMR0_ReadTimer(void)
     return readVal;
 }
 
-void TMR0_WriteTimer(uint8_t timerVal)
-{
+void TMR0_WriteTimer(uint8_t timerVal) {
     // Write to the Timer0 register
     TMR0 = timerVal;
 }
 
-void TMR0_Reload(void)
-{
+void TMR0_Reload(void) {
     // Write to the Timer0 register
     TMR0 = timer0ReloadVal;
 }
 
-void TMR0_ISR(void)
-{
+void TMR0_ISR(void) {
 
     // Clear the TMR0 interrupt flag
     INTCONbits.TMR0IF = 0;
 
     TMR0 = timer0ReloadVal;
 
-    if(TMR0_InterruptHandler)
-    {
+    if (TMR0_InterruptHandler) {
         TMR0_InterruptHandler();
     }
 
     // add your TMR0 interrupt custom code
 }
 
-
-void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)) {
     TMR0_InterruptHandler = InterruptHandler;
 }
 
-void TMR0_DefaultInterruptHandler(void){
+void TMR0_DefaultInterruptHandler(void) {
     // add your TMR0 interrupt custom code
     // or set custom function using TMR0_SetInterruptHandler()
 }
 
 /**
   End of File
-*/
+ */

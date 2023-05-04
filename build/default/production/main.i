@@ -6195,17 +6195,37 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 8 "/opt/microchip/xc8/v2.36/pic/include/c99/conio.h" 2 3
 # 55 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 56 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/nco1.h" 1
 # 93 "./mcc_generated_files/nco1.h"
 void NCO1_Initialize(void);
 # 128 "./mcc_generated_files/nco1.h"
 _Bool NCO1_GetOutputStatus(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+# 57 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 98 "./mcc_generated_files/tmr0.h"
+    void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+    uint8_t TMR0_ReadTimer(void);
+# 168 "./mcc_generated_files/tmr0.h"
+    void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "./mcc_generated_files/tmr0.h"
+    void TMR0_Reload(void);
+# 219 "./mcc_generated_files/tmr0.h"
+    void TMR0_ISR(void);
+# 238 "./mcc_generated_files/tmr0.h"
+    void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "./mcc_generated_files/tmr0.h"
+    extern void (*TMR0_InterruptHandler)(void);
+# 274 "./mcc_generated_files/tmr0.h"
+    void TMR0_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 97 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 45 "main.c" 2
 
@@ -6229,12 +6249,39 @@ void WDT_Initialize(void);
         return;
     }
 # 51 "main.c" 2
+# 1 "./random_TMR0.h" 1
+# 18 "./random_TMR0.h"
+    uint16_t random_TMR0(unsigned char reSeed) {
+        static unsigned char now = 0;
+        if (now % reSeed == 0)srand(TMR0_ReadTimer());
+        now++;
+        return rand();
+    }
+# 52 "main.c" 2
+# 1 "./TMR0ALT.h" 1
+# 15 "./TMR0ALT.h"
+    _Bool tmr0val = 0;
+
+    void TMR0isrFlip() {
+        tmr0val = !tmr0val;
+    }
+
+    _Bool isTMR0Sta() {
+        return tmr0val;
+    }
+# 53 "main.c" 2
 
 
 
 
 
-unsigned int data = 0x01;
+unsigned char data = 0x01;
+unsigned char target = 0x00;
+_Bool confirm = 0;
+
+void __interrupt ISR(void) {
+    TMR0_ISR();
+}
 
 void flashLED(unsigned int disp, int segs) {
     for (unsigned char i = 0; i < segs; i++) {
@@ -6253,12 +6300,11 @@ void R_BTN_READ(void) {
     if (!PORTCbits.RC0 && !rflag) {
 
 
-        data >>= 1;
-        if (data == 0b0) data = 0b1000000000;
+        confirm = 1;
+        tone(1000);
+
+
         rflag = 1;
-        tone(500);
-
-
         _delay((unsigned long)((10)*(16000000/4000.0)));
     } else if (PORTCbits.RC0 && rflag) {
         rflag = 0;
@@ -6275,10 +6321,10 @@ void B_BTN_READ(void) {
 
         data <<= 1;
         if (data == 0b10000000000) data = 0x01;
-        bflag = 1;
         tone(500);
 
 
+        bflag = 1;
         _delay((unsigned long)((10)*(16000000/4000.0)));
     } else if (PORTCbits.RC2 && bflag) {
         bflag = 0;
@@ -6288,10 +6334,15 @@ void B_BTN_READ(void) {
     return;
 }
 
+unsigned char mkTarget(void) {
+    unsigned char shift = random_TMR0(16) % 10;
+    return 0b1 << shift;
+}
+
 void main(void) {
 
     SYSTEM_Initialize();
-# 129 "main.c"
+# 141 "main.c"
     tone(2000);
     _delay((unsigned long)((100)*(16000000/4000.0)));
     tone(1000);
@@ -6299,13 +6350,17 @@ void main(void) {
     noTone();
 
     while (1) {
-        while (1) {
+        target = mkTarget();
+        while (!confirm) {
 
             R_BTN_READ();
             B_BTN_READ();
 
 
-            flashLED(data, 10);
+            flashLED(data | (target & isTMR0Sta()), 10);
+        }
+        if (data == target) {
+
         }
     }
 }

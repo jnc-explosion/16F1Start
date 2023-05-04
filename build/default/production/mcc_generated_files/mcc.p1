@@ -2,15 +2,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "152 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 152: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"83 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 83: void OSCILLATOR_Initialize(void);
+"85 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 85: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"95
-[; ;mcc_generated_files/mcc.h: 95: void WDT_Initialize(void);
+"97
+[; ;mcc_generated_files/mcc.h: 97: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/nco1.h
 [; ;mcc_generated_files/nco1.h: 93: void NCO1_Initialize(void);
 [v _NCO1_Initialize `(v ~T0 @X0 0 ef ]
+"98 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 98:     void TMR0_Initialize(void);
+[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
 "1532 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
 [; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 1532: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
@@ -596,39 +599,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 56:     NCO1_Initialize();
 [e ( _NCO1_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57: }
+[; ;mcc_generated_files/mcc.c: 57:     TMR0_Initialize();
+[e ( _TMR0_Initialize ..  ]
+"58
+[; ;mcc_generated_files/mcc.c: 58: }
 [e :UE 451 ]
 }
-"59
-[; ;mcc_generated_files/mcc.c: 59: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "60
-[; ;mcc_generated_files/mcc.c: 60: {
+[; ;mcc_generated_files/mcc.c: 60: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"61
+[; ;mcc_generated_files/mcc.c: 61: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"62
-[; ;mcc_generated_files/mcc.c: 62:     OSCCON = 0x7A;
+"63
+[; ;mcc_generated_files/mcc.c: 63:     OSCCON = 0x7A;
 [e = _OSCCON -> -> 122 `i `uc ]
-"64
-[; ;mcc_generated_files/mcc.c: 64:     BORCON = 0x00;
-[e = _BORCON -> -> 0 `i `uc ]
 "65
-[; ;mcc_generated_files/mcc.c: 65: }
+[; ;mcc_generated_files/mcc.c: 65:     BORCON = 0x00;
+[e = _BORCON -> -> 0 `i `uc ]
+"66
+[; ;mcc_generated_files/mcc.c: 66: }
 [e :UE 452 ]
 }
-"67
-[; ;mcc_generated_files/mcc.c: 67: void WDT_Initialize(void)
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
 "68
-[; ;mcc_generated_files/mcc.c: 68: {
+[; ;mcc_generated_files/mcc.c: 68: void WDT_Initialize(void)
+[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+"69
+[; ;mcc_generated_files/mcc.c: 69: {
 {
 [e :U _WDT_Initialize ]
 [f ]
-"70
-[; ;mcc_generated_files/mcc.c: 70:     WDTCON = 0x16;
-[e = _WDTCON -> -> 22 `i `uc ]
 "71
-[; ;mcc_generated_files/mcc.c: 71: }
+[; ;mcc_generated_files/mcc.c: 71:     WDTCON = 0x16;
+[e = _WDTCON -> -> 22 `i `uc ]
+"72
+[; ;mcc_generated_files/mcc.c: 72: }
 [e :UE 453 ]
 }

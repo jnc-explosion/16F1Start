@@ -1,4 +1,4 @@
-# 1 "toner.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "toner.c" 2
-# 1 "./toner.h" 1
-# 11 "./toner.h"
+# 1 "mcc_generated_files/interrupt_manager.c" 2
+# 49 "mcc_generated_files/interrupt_manager.c"
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 50 "mcc_generated_files/interrupt_manager.c" 2
+# 1 "mcc_generated_files/mcc.h" 1
+# 49 "mcc_generated_files/mcc.h"
 # 1 "/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/xc.h" 1 3
 # 18 "/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -6029,28 +6032,213 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/xc.h" 2 3
-# 12 "./toner.h" 2
+# 50 "mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/device_config.h" 1
+# 51 "mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/pin_manager.h" 1
+# 152 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 164 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 52 "mcc_generated_files/mcc.h" 2
+
 # 1 "/opt/microchip/xc8/v2.36/pic/include/c99/stdbool.h" 1 3
-# 13 "./toner.h" 2
+# 54 "mcc_generated_files/mcc.h" 2
+# 1 "/opt/microchip/xc8/v2.36/pic/include/c99/conio.h" 1 3
 
 
 
 
 
-    void flashLED(unsigned int disp, int segs);
-    void noTone(void);
-# 2 "toner.c" 2
 
-void tone(unsigned int freq) {
-    N1OE = 1;
-    freq = freq / 8;
-    NCO1INCL = freq % 256;
-    NCO1INCH = freq / 256;
-    return;
-}
+# 1 "/opt/microchip/xc8/v2.36/pic/include/c99/stdio.h" 1 3
+# 24 "/opt/microchip/xc8/v2.36/pic/include/c99/stdio.h" 3
+# 1 "/opt/microchip/xc8/v2.36/pic/include/c99/bits/alltypes.h" 1 3
 
-void noTone(void) {
-    N1OE = 0;
 
-    return;
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "/opt/microchip/xc8/v2.36/pic/include/c99/bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "/opt/microchip/xc8/v2.36/pic/include/c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "/opt/microchip/xc8/v2.36/pic/include/c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "/opt/microchip/xc8/v2.36/pic/include/c99/stdio.h" 2 3
+# 52 "/opt/microchip/xc8/v2.36/pic/include/c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 8 "/opt/microchip/xc8/v2.36/pic/include/c99/conio.h" 2 3
+# 55 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/nco1.h" 1
+# 93 "mcc_generated_files/nco1.h"
+void NCO1_Initialize(void);
+# 128 "mcc_generated_files/nco1.h"
+_Bool NCO1_GetOutputStatus(void);
+# 57 "mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/tmr0.h" 1
+# 98 "mcc_generated_files/tmr0.h"
+    void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+    uint8_t TMR0_ReadTimer(void);
+# 168 "mcc_generated_files/tmr0.h"
+    void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "mcc_generated_files/tmr0.h"
+    void TMR0_Reload(void);
+# 219 "mcc_generated_files/tmr0.h"
+    void TMR0_ISR(void);
+# 238 "mcc_generated_files/tmr0.h"
+    void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "mcc_generated_files/tmr0.h"
+    extern void (*TMR0_InterruptHandler)(void);
+# 274 "mcc_generated_files/tmr0.h"
+    void TMR0_DefaultInterruptHandler(void);
+# 58 "mcc_generated_files/mcc.h" 2
+# 72 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 85 "mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 97 "mcc_generated_files/mcc.h"
+void WDT_Initialize(void);
+# 51 "mcc_generated_files/interrupt_manager.c" 2
+
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+{
+
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    {
+        TMR0_ISR();
+    }
+    else
+    {
+
+    }
 }

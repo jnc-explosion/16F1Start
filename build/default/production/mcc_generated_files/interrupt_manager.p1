@@ -1,32 +1,24 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"11295 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 11295: extern volatile __bit N1OE __attribute__((address(0x24F6)));
-[v _N1OE `Vb ~T0 @X0 0 e@9462 ]
-"4429
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 4429: extern volatile unsigned char NCO1INCL __attribute__((address(0x49B)));
-[v _NCO1INCL `Vuc ~T0 @X0 0 e@1179 ]
-"4491
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 4491: extern volatile unsigned char NCO1INCH __attribute__((address(0x49C)));
-[v _NCO1INCH `Vuc ~T0 @X0 0 e@1180 ]
-"524
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 524:     struct {
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"523
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 523: typedef union {
-[u S37 `S38 1 ]
-[n S37 . . ]
-"535
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 535: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
-[v _PORTCbits `VS37 ~T0 @X0 0 e@14 ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-[p mainexit ]
-"70 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"357 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 357:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"367
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 367:     struct {
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"356
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 356: typedef union {
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"374
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"219 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 219:     void TMR0_ISR(void);
+[v _TMR0_ISR `(v ~T0 @X0 0 ef ]
 "54 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
 [; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -582,280 +574,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9812
 [; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 9812: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"18 ./toner.h
-[; ;./toner.h: 18:     void tone(unsigned int freq) {
-[v _tone `(v ~T0 @X0 1 ef1`ui ]
+[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
+"52 mcc_generated_files/interrupt_manager.c
+[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
+"53
+[; ;mcc_generated_files/interrupt_manager.c: 53: {
 {
-[e :U _tone ]
-[v _freq `ui ~T0 @X0 1 r1 ]
+[e :U _INTERRUPT_InterruptManager ]
 [f ]
-"19
-[; ;./toner.h: 19:         N1OE = 1;
-[e = _N1OE -> -> 1 `i `b ]
-"20
-[; ;./toner.h: 20:         freq = freq / 8;
-[e = _freq / _freq -> -> 8 `i `ui ]
-"21
-[; ;./toner.h: 21:         NCO1INCL = freq % 256;
-[e = _NCO1INCL -> % _freq -> -> 256 `i `ui `uc ]
-"22
-[; ;./toner.h: 22:         NCO1INCH = freq / 256;
-[e = _NCO1INCH -> / _freq -> -> 256 `i `ui `uc ]
-"23
-[; ;./toner.h: 23:         return;
-[e $UE 451  ]
-"24
-[; ;./toner.h: 24:     }
-[e :UE 451 ]
-}
-"26
-[; ;./toner.h: 26:     void noTone(void) {
-[v _noTone `(v ~T0 @X0 1 ef ]
+"55
+[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 452  ]
+"56
+[; ;mcc_generated_files/interrupt_manager.c: 56:     {
 {
-[e :U _noTone ]
-[f ]
-"27
-[; ;./toner.h: 27:         N1OE = 0;
-[e = _N1OE -> -> 0 `i `b ]
-"29
-[; ;./toner.h: 29:         return;
-[e $UE 452  ]
-"30
-[; ;./toner.h: 30:     }
-[e :UE 452 ]
-}
-"56 main.c
-[; ;main.c: 56: unsigned int data = 0x01;
-[v _data `ui ~T0 @X0 1 e ]
-[i _data
--> -> 1 `i `ui
-]
+"57
+[; ;mcc_generated_files/interrupt_manager.c: 57:         TMR0_ISR();
+[e ( _TMR0_ISR ..  ]
 "58
-[; ;main.c: 58: void flashLED(unsigned int disp, int segs) {
-[v _flashLED `(v ~T0 @X0 1 ef2`ui`i ]
-{
-[e :U _flashLED ]
-[v _disp `ui ~T0 @X0 1 r1 ]
-[v _segs `i ~T0 @X0 1 r2 ]
-[f ]
+[; ;mcc_generated_files/interrupt_manager.c: 58:     }
+}
+[e $U 453  ]
 "59
-[; ;main.c: 59:     for (unsigned char i = 0; i < segs; i++) {
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $U 457  ]
-[e :U 454 ]
-{
+[; ;mcc_generated_files/interrupt_manager.c: 59:     else
+[e :U 452 ]
 "60
-[; ;main.c: 60:         PORTCbits.RC5 = 0;
-[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"61
-[; ;main.c: 61:         PORTCbits.RC4 = (disp & 0b1);
-[e = . . _PORTCbits 0 4 -> & _disp -> -> 1 `i `ui `uc ]
+[; ;mcc_generated_files/interrupt_manager.c: 60:     {
+{
 "62
-[; ;main.c: 62:         disp >>= 1;
-[e =>> _disp -> -> 1 `i `ui ]
+[; ;mcc_generated_files/interrupt_manager.c: 62:     }
+}
+[e :U 453 ]
 "63
-[; ;main.c: 63:         PORTCbits.RC5 = 1;
-[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"64
-[; ;main.c: 64:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 457 ]
-[e $ < -> _i `i _segs 454  ]
-[e :U 455 ]
-}
-"65
-[; ;main.c: 65:     PORTCbits.RC5 = 0;
-[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66:     PORTCbits.RC3 = 1;
-[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     PORTCbits.RC3 = 0;
-[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"68
-[; ;main.c: 68: }
-[e :UE 453 ]
-}
-"70
-[; ;main.c: 70: void R_BTN_READ(void) {
-[v _R_BTN_READ `(v ~T0 @X0 1 ef ]
-{
-[e :U _R_BTN_READ ]
-[f ]
-"71
-[; ;main.c: 71:     static _Bool rflag = 0;
-[v F3829 `a ~T0 @X0 1 s rflag ]
-[i F3829
--> -> 0 `i `a
-]
-"72
-[; ;main.c: 72:     if (!PORTCbits.RC0 && !rflag) {
-[e $ ! && ! != -> . . _PORTCbits 0 0 `i -> 0 `i ! != -> F3829 `i -> 0 `i 459  ]
-{
-"75
-[; ;main.c: 75:         data >>= 1;
-[e =>> _data -> -> 1 `i `ui ]
-"76
-[; ;main.c: 76:         if (data == 0b0) data = 0b1000000000;
-[e $ ! == _data -> -> 0 `i `ui 460  ]
-[e = _data -> -> 512 `i `ui ]
-[e :U 460 ]
-"77
-[; ;main.c: 77:         rflag = 1;
-[e = F3829 -> -> 1 `i `a ]
-"78
-[; ;main.c: 78:         tone(500);
-[e ( _tone (1 -> -> 500 `i `ui ]
-"81
-[; ;main.c: 81:         _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"82
-[; ;main.c: 82:     } else if (PORTCbits.RC0 && rflag) {
-}
-[e $U 461  ]
-[e :U 459 ]
-[e $ ! && != -> . . _PORTCbits 0 0 `i -> 0 `i != -> F3829 `i -> 0 `i 462  ]
-{
-"83
-[; ;main.c: 83:         rflag = 0;
-[e = F3829 -> -> 0 `i `a ]
-"84
-[; ;main.c: 84:         noTone();
-[e ( _noTone ..  ]
-"85
-[; ;main.c: 85:         _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"86
-[; ;main.c: 86:     }
-}
-[e :U 462 ]
-[e :U 461 ]
-"87
-[; ;main.c: 87:     return;
-[e $UE 458  ]
-"88
-[; ;main.c: 88: }
-[e :UE 458 ]
-}
-"90
-[; ;main.c: 90: void B_BTN_READ(void) {
-[v _B_BTN_READ `(v ~T0 @X0 1 ef ]
-{
-[e :U _B_BTN_READ ]
-[f ]
-"91
-[; ;main.c: 91:     static _Bool bflag = 0;
-[v F3831 `a ~T0 @X0 1 s bflag ]
-[i F3831
--> -> 0 `i `a
-]
-"92
-[; ;main.c: 92:     if (!PORTCbits.RC2 && !bflag) {
-[e $ ! && ! != -> . . _PORTCbits 0 2 `i -> 0 `i ! != -> F3831 `i -> 0 `i 464  ]
-{
-"95
-[; ;main.c: 95:         data <<= 1;
-[e =<< _data -> -> 1 `i `ui ]
-"96
-[; ;main.c: 96:         if (data == 0b10000000000) data = 0x01;
-[e $ ! == _data -> -> 1024 `i `ui 465  ]
-[e = _data -> -> 1 `i `ui ]
-[e :U 465 ]
-"97
-[; ;main.c: 97:         bflag = 1;
-[e = F3831 -> -> 1 `i `a ]
-"98
-[; ;main.c: 98:         tone(500);
-[e ( _tone (1 -> -> 500 `i `ui ]
-"101
-[; ;main.c: 101:         _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"102
-[; ;main.c: 102:     } else if (PORTCbits.RC2 && bflag) {
-}
-[e $U 466  ]
-[e :U 464 ]
-[e $ ! && != -> . . _PORTCbits 0 2 `i -> 0 `i != -> F3831 `i -> 0 `i 467  ]
-{
-"103
-[; ;main.c: 103:         bflag = 0;
-[e = F3831 -> -> 0 `i `a ]
-"104
-[; ;main.c: 104:         noTone();
-[e ( _noTone ..  ]
-"105
-[; ;main.c: 105:         _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"106
-[; ;main.c: 106:     }
-}
-[e :U 467 ]
-[e :U 466 ]
-"107
-[; ;main.c: 107:     return;
-[e $UE 463  ]
-"108
-[; ;main.c: 108: }
-[e :UE 463 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"110
-[; ;main.c: 110: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"112
-[; ;main.c: 112:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"129
-[; ;main.c: 129:     tone(2000);
-[e ( _tone (1 -> -> 2000 `i `ui ]
-"130
-[; ;main.c: 130:     _delay((unsigned long)((100)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"131
-[; ;main.c: 131:     tone(1000);
-[e ( _tone (1 -> -> 1000 `i `ui ]
-"132
-[; ;main.c: 132:     _delay((unsigned long)((100)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"133
-[; ;main.c: 133:     noTone();
-[e ( _noTone ..  ]
-"135
-[; ;main.c: 135:     while (1) {
-[e :U 470 ]
-{
-"136
-[; ;main.c: 136:         while (1) {
-[e :U 473 ]
-{
-"138
-[; ;main.c: 138:             R_BTN_READ();
-[e ( _R_BTN_READ ..  ]
-"139
-[; ;main.c: 139:             B_BTN_READ();
-[e ( _B_BTN_READ ..  ]
-"142
-[; ;main.c: 142:             flashLED(data, 10);
-[e ( _flashLED (2 , _data -> 10 `i ]
-"143
-[; ;main.c: 143:         }
-}
-[e :U 472 ]
-[e $U 473  ]
-[e :U 474 ]
-"144
-[; ;main.c: 144:     }
-}
-[e :U 469 ]
-[e $U 470  ]
-[e :U 471 ]
-"145
-[; ;main.c: 145: }
-[e :UE 468 ]
+[; ;mcc_generated_files/interrupt_manager.c: 63: }
+[e :UE 451 ]
 }

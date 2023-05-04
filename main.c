@@ -46,74 +46,6 @@
 /*
                          Main application
  */
-
-#include "toner.h"
-#include "random_TMR0.h"
-
-#define SEGIC 10
-#define ANTI_CHATA_MSEC 10
-
-//global variables
-unsigned char data = 0x01;
-unsigned char target = 0x00;
-bool confirm = false;
-
-void flashLED(unsigned int disp, int segs) {
-    for (unsigned char i = 0; i < segs; i++) {
-        LED_CLK_PORT = 0;
-        LED_DAT_PORT = (disp & 0b1);
-        disp >>= 1;
-        LED_CLK_PORT = 1;
-    }
-    LED_CLK_PORT = 0;
-    LED_STB_PORT = 1;
-    LED_STB_PORT = 0;
-}
-
-void R_BTN_READ(void) {
-    static bool rflag = false;
-    if (!R_BTN_PORT && !rflag) {
-
-        // write process here
-        confirm = true;
-        tone(1000);
-        // write process here
-
-        rflag = true;
-        __delay_ms(ANTI_CHATA_MSEC); //anti chata
-    } else if (R_BTN_PORT && rflag) {
-        rflag = false;
-        noTone();
-        __delay_ms(ANTI_CHATA_MSEC); //anti chata
-    }
-    return;
-}
-
-void B_BTN_READ(void) {
-    static bool bflag = false;
-    if (!B_BTN_PORT && !bflag) {
-
-        // write process here
-        data <<= 1;
-        if (data == 0b10000000000) data = 0x01;
-        tone(500);
-        // write process here
-
-        bflag = true;
-        __delay_ms(ANTI_CHATA_MSEC); // anti chata
-    } else if (B_BTN_PORT && bflag) {
-        bflag = false;
-        noTone();
-        __delay_ms(ANTI_CHATA_MSEC); //anti chata
-    }
-    return;
-}
-
-unsigned char mkTarget(void) {
-    unsigned char shift = random_TMR0(16) % 10;
-    return 0b1 << shift;
-}
-
 void main(void) {
     // initialize the device
     SYSTEM_Initialize();
@@ -133,28 +65,10 @@ void main(void) {
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-    tone(2000);
-    __delay_ms(100);
-    tone(1000);
-    __delay_ms(100);
-    noTone();
-
     while (1) {
-        target = mkTarget();
-        while (!confirm) {
-            // read BTN
-            R_BTN_READ();
-            B_BTN_READ();
-
-            // flash
-            flashLED(data | (target & ten), SEGIC);
-        }
-        if (data == target) {
-
-        }
+        // Add your application code
     }
 }
 /**
  End of File
- 
- **/
+ */
