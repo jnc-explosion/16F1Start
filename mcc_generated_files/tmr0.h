@@ -273,6 +273,8 @@ extern "C" {
      */
     void TMR0_DefaultInterruptHandler(void);
 
+    extern bool TMR0flipper;
+
 #ifdef __cplusplus  // Provide C++ Compatibility
 
 }

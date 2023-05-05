@@ -6220,6 +6220,8 @@ _Bool NCO1_GetOutputStatus(void);
     extern void (*TMR0_InterruptHandler)(void);
 # 274 "./mcc_generated_files/tmr0.h"
     void TMR0_DefaultInterruptHandler(void);
+
+    extern _Bool TMR0flipper;
 # 58 "./mcc_generated_files/mcc.h" 2
 # 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -6228,11 +6230,6 @@ void OSCILLATOR_Initialize(void);
 # 97 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 45 "main.c" 2
-
-
-
-
-
 # 1 "./toner.h" 1
 # 18 "./toner.h"
     void tone(unsigned int freq) {
@@ -6248,7 +6245,7 @@ void WDT_Initialize(void);
 
         return;
     }
-# 51 "main.c" 2
+# 46 "main.c" 2
 # 1 "./random_TMR0.h" 1
 # 18 "./random_TMR0.h"
     uint16_t random_TMR0(unsigned char reSeed) {
@@ -6257,30 +6254,44 @@ void WDT_Initialize(void);
         now++;
         return rand();
     }
-# 52 "main.c" 2
-# 1 "./TMR0ALT.h" 1
-# 15 "./TMR0ALT.h"
-    _Bool tmr0val = 0;
+# 47 "main.c" 2
+# 58 "main.c"
+uint16_t cursor = 0x01;
+uint16_t target = 0x01;
+uint16_t point = 0;
+uint16_t velocity = 50;
+int8_t life = 3;
+_Bool inloop = 0;
+_Bool gameflag = 0;
+_Bool brightflip = 0;
+_Bool great = 0;
+_Bool shiftToL = 0;
 
-    void TMR0isrFlip() {
-        tmr0val = !tmr0val;
+void R_BTN_run(void(*ffptr)(), void(*lfptr)()) {
+    static _Bool rflag = 0;
+    if (!PORTCbits.RC0 && !rflag) {
+        ffptr();
+        rflag = 1;
+        _delay((unsigned long)((50)*(16000000/4000.0)));
+    } else if (PORTCbits.RC0 && rflag) {
+        lfptr();
+        rflag = 0;
+        _delay((unsigned long)((50)*(16000000/4000.0)));
     }
+    return;
+}
 
-    _Bool isTMR0Sta() {
-        return tmr0val;
+void B_BTN_run(void(*ffptr)(), void(*lfptr)()) {
+    static _Bool bflag = 0;
+    if (!PORTCbits.RC2 && !bflag) {
+        ffptr();
+        bflag = 1;
+        _delay((unsigned long)((50)*(16000000/4000.0)));
+    } else if (PORTCbits.RC2 && bflag) {
+        lfptr();
+        bflag = 0;
+        _delay((unsigned long)((50)*(16000000/4000.0)));
     }
-# 53 "main.c" 2
-
-
-
-
-
-unsigned char data = 0x01;
-unsigned char target = 0x00;
-_Bool confirm = 0;
-
-void __interrupt ISR(void) {
-    TMR0_ISR();
 }
 
 void flashLED(unsigned int disp, int segs) {
@@ -6295,54 +6306,167 @@ void flashLED(unsigned int disp, int segs) {
     PORTCbits.RC3 = 0;
 }
 
-void R_BTN_READ(void) {
-    static _Bool rflag = 0;
-    if (!PORTCbits.RC0 && !rflag) {
+void shiftL(void) {
+    if (cursor & 0b1) cursor = cursor | 0b10000000000;
+    cursor >>= 1;
+    if (cursor & 0b10000000000) cursor = cursor | 0b1;
+    tone(800);
+    return;
+}
 
+void shiftR(void) {
+    if (cursor & 0b1) cursor = cursor | 0b100000000000;
+    cursor <<= 1;
+    if (cursor & 0b10000000000) cursor = cursor | 0b1;
+    tone(800);
+    return;
+}
 
-        confirm = 1;
+void shiftInv() {
+    shiftToL = !shiftToL;
+    return;
+}
+
+void flashing(void) {
+    static uint16_t bdisp = 0;
+    uint16_t nowdisp = (cursor << 5) | (0b11100 >> (3 - life)) & 0b11100 | great << 1 | gameflag;
+    if (nowdisp != bdisp)flashLED(nowdisp, 15);
+    bdisp = nowdisp;
+    return;
+}
+# 151 "main.c"
+void dispExact(void) {
+    noTone();
+    flashLED(0, 15);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    for (uint8_t i = 0, m = 0b11000; i < 6; i++, m = ~m) {
+        flashLED(0b100000000100000 | (m & 0b000000000011100 | 0b00100), 15);
+        tone(200);
+        _delay((unsigned long)((100)*(16000000/4000.0)));
+        noTone();
+        _delay((unsigned long)((100)*(16000000/4000.0)));
+    }
+    for (uint8_t i = 0, m = 0b10000; i < 6; i++, m = ~m) {
+        flashLED(0b011000011000000 | (m & 0b000000000011100 | 0b01100), 15);
+        tone(800);
+        _delay((unsigned long)((100)*(16000000/4000.0)));
+        noTone();
+        _delay((unsigned long)((100)*(16000000/4000.0)));
+    }
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+    flashLED(0b000111100000000, 15);
+    tone(1600);
+    _delay((unsigned long)((1000)*(16000000/4000.0)));
+    for (uint16_t i = 0, disp = 0b000111100000000; i < 8; i++, disp = ~disp) {
+        flashLED((disp & 0b000111100000011) | 0b11100, 15);
+        noTone();
+        _delay((unsigned long)((200)*(16000000/4000.0)));
+        tone(1600);
+        _delay((unsigned long)((200)*(16000000/4000.0)));
+    }
+    noTone();
+    return;
+}
+
+void start(void) {
+    tone(523);
+    _delay((unsigned long)((250)*(16000000/4000.0)));
+    noTone();
+    _delay((unsigned long)((125)*(16000000/4000.0)));
+    tone(523);
+    _delay((unsigned long)((250)*(16000000/4000.0)));
+    tone(587);
+    _delay((unsigned long)((250)*(16000000/4000.0)));
+    tone(391);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    inloop = 1;
+    gameflag = 1;
+    return;
+}
+
+void collect(void) {
+    for (uint8_t i = 0; i < 10; i++) {
+        great = !great;
+        flashing();
+        tone(2000);
+        _delay((unsigned long)((17)*(16000000/4000.0)));
+        great = !great;
+        flashing();
         tone(1000);
-
-
-        rflag = 1;
-        _delay((unsigned long)((10)*(16000000/4000.0)));
-    } else if (PORTCbits.RC0 && rflag) {
-        rflag = 0;
-        noTone();
-        _delay((unsigned long)((10)*(16000000/4000.0)));
+        _delay((unsigned long)((17)*(16000000/4000.0)));
+        great = !great;
+        flashing();
+        tone(4000);
+        _delay((unsigned long)((16)*(16000000/4000.0)));
     }
+    noTone();
+    if (velocity != 1)velocity--;
+    point++;
+
     return;
 }
 
-void B_BTN_READ(void) {
-    static _Bool bflag = 0;
-    if (!PORTCbits.RC2 && !bflag) {
-
-
-        data <<= 1;
-        if (data == 0b10000000000) data = 0x01;
+void incollect(void) {
+    for (uint8_t i = 0; i < 10; i++) {
         tone(500);
-
-
-        bflag = 1;
-        _delay((unsigned long)((10)*(16000000/4000.0)));
-    } else if (PORTCbits.RC2 && bflag) {
-        bflag = 0;
-        noTone();
-        _delay((unsigned long)((10)*(16000000/4000.0)));
+        _delay((unsigned long)((50)*(16000000/4000.0)));
+        tone(200);
+        _delay((unsigned long)((50)*(16000000/4000.0)));
     }
     return;
 }
 
-unsigned char mkTarget(void) {
-    unsigned char shift = random_TMR0(16) % 10;
-    return 0b1 << shift;
+void checkHit(void) {
+    if (cursor & 0b0001111000) {
+        collect();
+        if (great && life < 3) {
+            life++;
+        }
+        great = !great;
+    } else {
+        incollect();
+        great = 0;
+        if (cursor & 0b1000000001) {
+            life -= 2;
+        } else {
+            life--;
+        }
+        if (life < 0)gameflag = 0;
+    }
+}
+
+void result() {
+    flashLED((0b1111111111000 >> (15 - (point / 10) % 10) & 0b111111111100000), 15);
+# 287 "main.c"
+    tone(523);
+    _delay((unsigned long)((1000)*(16000000/4000.0)));
+    tone(698);
+    _delay((unsigned long)((1500)*(16000000/4000.0)));
+    tone(523);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    tone(698);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    tone(784);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    tone(831);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    noTone();
+    _delay((unsigned long)((200)*(16000000/4000.0)));
+    tone(698);
+    _delay((unsigned long)((200)*(16000000/4000.0)));
+    tone(784);
+    _delay((unsigned long)((2000)*(16000000/4000.0)));
+
+    noTone();
+    _delay((unsigned long)((1000)*(16000000/4000.0)));
+    point = 0;
+    return;
 }
 
 void main(void) {
 
     SYSTEM_Initialize();
-# 141 "main.c"
+# 331 "main.c"
     tone(2000);
     _delay((unsigned long)((100)*(16000000/4000.0)));
     tone(1000);
@@ -6350,17 +6474,67 @@ void main(void) {
     noTone();
 
     while (1) {
-        target = mkTarget();
-        while (!confirm) {
 
-            R_BTN_READ();
-            B_BTN_READ();
+        target = 0;
+        cursor = 0;
+        velocity = 50;
+        life = 3;
+        point = 0;
+        great = 0;
+        shiftToL = 0;
+        flashLED(cursor, 15);
 
 
-            flashLED(data | (target & isTMR0Sta()), 10);
+        while (!gameflag) {
+            R_BTN_run(start, ((void*)0));
+            B_BTN_run(start, ((void*)0));
+            if (cursor > 32767) {
+                cursor >>= random_TMR0(32) % 16;
+            } else {
+                cursor += random_TMR0(32) % 27;
+                cursor <<= random_TMR0(32) % 2;
+            }
+            tone(cursor & 0xFFF);
+            _delay((unsigned long)((25)*(16000000/4000.0)));
+            noTone();
+            _delay((unsigned long)((25)*(16000000/4000.0)));
+            flashLED(cursor, 15);
         }
-        if (data == target) {
+        noTone();
 
+
+        cursor = 0;
+        dispExact();
+
+        while (gameflag) {
+            cursor = 0b1000000000;
+            while (PORTCbits.RC0) {
+                B_BTN_run(shiftInv, ((void*)0));
+                if (shiftToL) {
+                    shiftL();
+                } else {
+                    shiftR();
+                }
+                flashing();
+                tone(800);
+                for (uint16_t i = 0; i < velocity; i++)_delay((unsigned long)((1)*(16000000/4000.0)));
+                noTone();
+                for (uint16_t i = 0; i < velocity; i++)_delay((unsigned long)((1)*(16000000/4000.0)));
+            }
+            for (uint16_t t = velocity; t <= 100; t += random_TMR0(8) % 15) {
+                if (shiftToL) {
+                    shiftL();
+                } else {
+                    shiftR();
+                }
+                flashing();
+                tone(800);
+                for (uint16_t i = 0; i < t; i++) _delay((unsigned long)((1)*(16000000/4000.0)));
+                noTone();
+                for (uint16_t i = 0; i < t; i++) _delay((unsigned long)((1)*(16000000/4000.0)));
+            }
+            checkHit();
         }
+        result();
     }
 }

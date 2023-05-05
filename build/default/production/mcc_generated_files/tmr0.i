@@ -6049,19 +6049,9 @@ extern __bank0 __bit __timeout;
     extern void (*TMR0_InterruptHandler)(void);
 # 274 "mcc_generated_files/tmr0.h"
     void TMR0_DefaultInterruptHandler(void);
+
+    extern _Bool TMR0flipper;
 # 53 "mcc_generated_files/tmr0.c" 2
-# 1 "mcc_generated_files/../TMR0ALT.h" 1
-# 15 "mcc_generated_files/../TMR0ALT.h"
-    _Bool tmr0val = 0;
-
-    void TMR0isrFlip() {
-        tmr0val = !tmr0val;
-    }
-
-    _Bool isTMR0Sta() {
-        return tmr0val;
-    }
-# 54 "mcc_generated_files/tmr0.c" 2
 
 
 
@@ -6069,7 +6059,7 @@ extern __bank0 __bit __timeout;
 
 volatile uint8_t timer0ReloadVal;
 void (*TMR0_InterruptHandler)(void);
-volatile _Bool TMR0val = 0;
+_Bool TMR0flipper = 0;
 
 
 
@@ -6116,7 +6106,6 @@ void TMR0_Reload(void) {
 }
 
 void TMR0_ISR(void) {
-    static unsigned char TMR0ISRtimes = 0;
 
 
     INTCONbits.TMR0IF = 0;
@@ -6128,8 +6117,6 @@ void TMR0_ISR(void) {
     }
 
 
-    if (TMR0ISRtimes % 16 == 0) TMR0isrFlip();
-    TMR0ISRtimes++;
 }
 
 void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)) {
@@ -6139,4 +6126,10 @@ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)) {
 void TMR0_DefaultInterruptHandler(void) {
 
 
+    static uint8_t isrTMR0count = 0;
+    isrTMR0count++;
+    if (isrTMR0count % 16 == 1) {
+        isrTMR0count = 0;
+        TMR0flipper = !TMR0flipper;
+    }
 }

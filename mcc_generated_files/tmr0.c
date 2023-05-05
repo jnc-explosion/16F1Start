@@ -57,6 +57,7 @@
 
 volatile uint8_t timer0ReloadVal;
 void (*TMR0_InterruptHandler)(void);
+bool TMR0flipper = false;
 
 /**
   Section: TMR0 APIs
@@ -123,6 +124,12 @@ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)) {
 void TMR0_DefaultInterruptHandler(void) {
     // add your TMR0 interrupt custom code
     // or set custom function using TMR0_SetInterruptHandler()
+    static uint8_t isrTMR0count = 0;
+    isrTMR0count++;
+    if (isrTMR0count % 16 == 1) {
+        isrTMR0count = 0;
+        TMR0flipper = !TMR0flipper;
+    }
 }
 
 /**

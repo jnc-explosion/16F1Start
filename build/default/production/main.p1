@@ -1,28 +1,54 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"152 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 152: void PIN_MANAGER_Initialize (void);
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 85: void OSCILLATOR_Initialize(void);
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"97
-[; ;mcc_generated_files/mcc.h: 97: void WDT_Initialize(void);
-[v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/nco1.h
-[; ;mcc_generated_files/nco1.h: 93: void NCO1_Initialize(void);
-[v _NCO1_Initialize `(v ~T0 @X0 0 ef ]
-"98 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 98:     void TMR0_Initialize(void);
-[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
-"1532 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 1532: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"2296
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 2296: extern volatile unsigned char BORCON __attribute__((address(0x116)));
-[v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"1473
-[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 1473: extern volatile unsigned char WDTCON __attribute__((address(0x097)));
-[v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
+"11295 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 11295: extern volatile __bit N1OE __attribute__((address(0x24F6)));
+[v _N1OE `Vb ~T0 @X0 0 e@9462 ]
+"4429
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 4429: extern volatile unsigned char NCO1INCL __attribute__((address(0x49B)));
+[v _NCO1INCL `Vuc ~T0 @X0 0 e@1179 ]
+"4491
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 4491: extern volatile unsigned char NCO1INCH __attribute__((address(0x49C)));
+[v _NCO1INCH `Vuc ~T0 @X0 0 e@1180 ]
+"40 /opt/microchip/xc8/v2.36/pic/include/c99/stdlib.h
+[; ;/opt/microchip/xc8/v2.36/pic/include/c99/stdlib.h: 40: void srand (unsigned);
+[v _srand `(v ~T0 @X0 0 ef1`ui ]
+"129 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 129:     uint8_t TMR0_ReadTimer(void);
+[v _TMR0_ReadTimer `(uc ~T0 @X0 0 ef ]
+"39 /opt/microchip/xc8/v2.36/pic/include/c99/stdlib.h
+[; ;/opt/microchip/xc8/v2.36/pic/include/c99/stdlib.h: 39: int rand (void);
+[v _rand `(i ~T0 @X0 0 ef ]
+[v F3851 `(v ~T0 @X0 0 t? ]
+[v F3852 `(v ~T0 @X0 0 t? ]
+[v F3854 `(v ~T0 @X0 0 t? ]
+[v F3856 `(v ~T0 @X0 0 t? ]
+"524 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 524:     struct {
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"523
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 523: typedef union {
+[u S37 `S38 1 ]
+[n S37 . . ]
+"535
+[; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 535: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
+[v _PORTCbits `VS37 ~T0 @X0 0 e@14 ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+[v F3859 `(v ~T0 @X0 0 t? ]
+[v F3860 `(v ~T0 @X0 0 t? ]
+[v F3862 `(v ~T0 @X0 0 t? ]
+[v F3864 `(v ~T0 @X0 0 t? ]
+[p mainexit ]
+"72 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+[v F3891 `(v ~T0 @X0 0 t? ]
+[v F3893 `(v ~T0 @X0 0 t? ]
+[v F3894 `(v ~T0 @X0 0 t? ]
+[v F3896 `(v ~T0 @X0 0 t? ]
+[v F3898 `(v ~T0 @X0 0 t? ]
 "54 /home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h
 [; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -578,63 +604,1141 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9812
 [; ;/home/meumeumeucar/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.4.213/xc8/pic/include/proc/pic16f1509.h: 9812: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"50 mcc_generated_files/mcc.c
-[; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"51
-[; ;mcc_generated_files/mcc.c: 51: {
+"18 ./toner.h
+[; ;./toner.h: 18:     void tone(unsigned int freq) {
+[v _tone `(v ~T0 @X0 1 ef1`ui ]
 {
-[e :U _SYSTEM_Initialize ]
+[e :U _tone ]
+[v _freq `ui ~T0 @X0 1 r1 ]
 [f ]
-"53
-[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
-"54
-[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
-"55
-[; ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
-[e ( _WDT_Initialize ..  ]
-"56
-[; ;mcc_generated_files/mcc.c: 56:     NCO1_Initialize();
-[e ( _NCO1_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58: }
+"19
+[; ;./toner.h: 19:         N1OE = 1;
+[e = _N1OE -> -> 1 `i `b ]
+"20
+[; ;./toner.h: 20:         freq = freq / 8;
+[e = _freq / _freq -> -> 8 `i `ui ]
+"21
+[; ;./toner.h: 21:         NCO1INCL = freq % 256;
+[e = _NCO1INCL -> % _freq -> -> 256 `i `ui `uc ]
+"22
+[; ;./toner.h: 22:         NCO1INCH = freq / 256;
+[e = _NCO1INCH -> / _freq -> -> 256 `i `ui `uc ]
+"23
+[; ;./toner.h: 23:         return;
+[e $UE 451  ]
+"24
+[; ;./toner.h: 24:     }
 [e :UE 451 ]
 }
-"60
-[; ;mcc_generated_files/mcc.c: 60: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"61
-[; ;mcc_generated_files/mcc.c: 61: {
+"26
+[; ;./toner.h: 26:     void noTone(void) {
+[v _noTone `(v ~T0 @X0 1 ef ]
 {
-[e :U _OSCILLATOR_Initialize ]
+[e :U _noTone ]
 [f ]
-"63
-[; ;mcc_generated_files/mcc.c: 63:     OSCCON = 0x78;
-[e = _OSCCON -> -> 120 `i `uc ]
-"65
-[; ;mcc_generated_files/mcc.c: 65:     BORCON = 0x00;
-[e = _BORCON -> -> 0 `i `uc ]
-"66
-[; ;mcc_generated_files/mcc.c: 66: }
+"27
+[; ;./toner.h: 27:         N1OE = 0;
+[e = _N1OE -> -> 0 `i `b ]
+"29
+[; ;./toner.h: 29:         return;
+[e $UE 452  ]
+"30
+[; ;./toner.h: 30:     }
 [e :UE 452 ]
 }
-"68
-[; ;mcc_generated_files/mcc.c: 68: void WDT_Initialize(void)
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
-"69
-[; ;mcc_generated_files/mcc.c: 69: {
+"18 ./random_TMR0.h
+[; ;./random_TMR0.h: 18:     uint16_t random_TMR0(unsigned char reSeed) {
+[v _random_TMR0 `(us ~T0 @X0 1 ef1`uc ]
 {
-[e :U _WDT_Initialize ]
+[e :U _random_TMR0 ]
+[v _reSeed `uc ~T0 @X0 1 r1 ]
 [f ]
-"71
-[; ;mcc_generated_files/mcc.c: 71:     WDTCON = 0x16;
-[e = _WDTCON -> -> 22 `i `uc ]
-"72
-[; ;mcc_generated_files/mcc.c: 72: }
+"19
+[; ;./random_TMR0.h: 19:         static unsigned char now = 0;
+[v F3839 `uc ~T0 @X0 1 s now ]
+[i F3839
+-> -> 0 `i `uc
+]
+"20
+[; ;./random_TMR0.h: 20:         if (now % reSeed == 0)srand(TMR0_ReadTimer());
+[e $ ! == % -> F3839 `i -> _reSeed `i -> 0 `i 454  ]
+[e ( _srand (1 -> ( _TMR0_ReadTimer ..  `ui ]
+[e :U 454 ]
+"21
+[; ;./random_TMR0.h: 21:         now++;
+[e ++ F3839 -> -> 1 `i `uc ]
+"22
+[; ;./random_TMR0.h: 22:         return rand();
+[e ) -> ( _rand ..  `us ]
+[e $UE 453  ]
+"23
+[; ;./random_TMR0.h: 23:     }
 [e :UE 453 ]
+}
+"58 main.c
+[; ;main.c: 58: uint16_t cursor = 0x01;
+[v _cursor `us ~T0 @X0 1 e ]
+[i _cursor
+-> -> 1 `i `us
+]
+"59
+[; ;main.c: 59: uint16_t target = 0x01;
+[v _target `us ~T0 @X0 1 e ]
+[i _target
+-> -> 1 `i `us
+]
+"60
+[; ;main.c: 60: uint16_t point = 0;
+[v _point `us ~T0 @X0 1 e ]
+[i _point
+-> -> 0 `i `us
+]
+"61
+[; ;main.c: 61: uint16_t velocity = 50;
+[v _velocity `us ~T0 @X0 1 e ]
+[i _velocity
+-> -> 50 `i `us
+]
+"62
+[; ;main.c: 62: int8_t life = 3;
+[v _life `c ~T0 @X0 1 e ]
+[i _life
+-> -> 3 `i `c
+]
+"63
+[; ;main.c: 63: _Bool inloop = 0;
+[v _inloop `a ~T0 @X0 1 e ]
+[i _inloop
+-> -> 0 `i `a
+]
+"64
+[; ;main.c: 64: _Bool gameflag = 0;
+[v _gameflag `a ~T0 @X0 1 e ]
+[i _gameflag
+-> -> 0 `i `a
+]
+"65
+[; ;main.c: 65: _Bool brightflip = 0;
+[v _brightflip `a ~T0 @X0 1 e ]
+[i _brightflip
+-> -> 0 `i `a
+]
+"66
+[; ;main.c: 66: _Bool great = 0;
+[v _great `a ~T0 @X0 1 e ]
+[i _great
+-> -> 0 `i `a
+]
+"67
+[; ;main.c: 67: _Bool shiftToL = 0;
+[v _shiftToL `a ~T0 @X0 1 e ]
+[i _shiftToL
+-> -> 0 `i `a
+]
+"69
+[; ;main.c: 69: void R_BTN_run(void(*ffptr)(), void(*lfptr)()) {
+[v _R_BTN_run `(v ~T0 @X0 1 ef2`*F3851`*F3852 ]
+{
+[e :U _R_BTN_run ]
+[v _ffptr `*F3854 ~T0 @X0 1 r1 ]
+[v _lfptr `*F3856 ~T0 @X0 1 r2 ]
+[f ]
+"70
+[; ;main.c: 70:     static _Bool rflag = 0;
+[v F3857 `a ~T0 @X0 1 s rflag ]
+[i F3857
+-> -> 0 `i `a
+]
+"71
+[; ;main.c: 71:     if (!PORTCbits.RC0 && !rflag) {
+[e $ ! && ! != -> . . _PORTCbits 0 0 `i -> 0 `i ! != -> F3857 `i -> 0 `i 456  ]
+{
+"72
+[; ;main.c: 72:         ffptr();
+[e ( *U _ffptr ..  ]
+"73
+[; ;main.c: 73:         rflag = 1;
+[e = F3857 -> -> 1 `i `a ]
+"74
+[; ;main.c: 74:         _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"75
+[; ;main.c: 75:     } else if (PORTCbits.RC0 && rflag) {
+}
+[e $U 457  ]
+[e :U 456 ]
+[e $ ! && != -> . . _PORTCbits 0 0 `i -> 0 `i != -> F3857 `i -> 0 `i 458  ]
+{
+"76
+[; ;main.c: 76:         lfptr();
+[e ( *U _lfptr ..  ]
+"77
+[; ;main.c: 77:         rflag = 0;
+[e = F3857 -> -> 0 `i `a ]
+"78
+[; ;main.c: 78:         _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"79
+[; ;main.c: 79:     }
+}
+[e :U 458 ]
+[e :U 457 ]
+"80
+[; ;main.c: 80:     return;
+[e $UE 455  ]
+"81
+[; ;main.c: 81: }
+[e :UE 455 ]
+}
+"83
+[; ;main.c: 83: void B_BTN_run(void(*ffptr)(), void(*lfptr)()) {
+[v _B_BTN_run `(v ~T0 @X0 1 ef2`*F3859`*F3860 ]
+{
+[e :U _B_BTN_run ]
+[v _ffptr `*F3862 ~T0 @X0 1 r1 ]
+[v _lfptr `*F3864 ~T0 @X0 1 r2 ]
+[f ]
+"84
+[; ;main.c: 84:     static _Bool bflag = 0;
+[v F3865 `a ~T0 @X0 1 s bflag ]
+[i F3865
+-> -> 0 `i `a
+]
+"85
+[; ;main.c: 85:     if (!PORTCbits.RC2 && !bflag) {
+[e $ ! && ! != -> . . _PORTCbits 0 2 `i -> 0 `i ! != -> F3865 `i -> 0 `i 460  ]
+{
+"86
+[; ;main.c: 86:         ffptr();
+[e ( *U _ffptr ..  ]
+"87
+[; ;main.c: 87:         bflag = 1;
+[e = F3865 -> -> 1 `i `a ]
+"88
+[; ;main.c: 88:         _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"89
+[; ;main.c: 89:     } else if (PORTCbits.RC2 && bflag) {
+}
+[e $U 461  ]
+[e :U 460 ]
+[e $ ! && != -> . . _PORTCbits 0 2 `i -> 0 `i != -> F3865 `i -> 0 `i 462  ]
+{
+"90
+[; ;main.c: 90:         lfptr();
+[e ( *U _lfptr ..  ]
+"91
+[; ;main.c: 91:         bflag = 0;
+[e = F3865 -> -> 0 `i `a ]
+"92
+[; ;main.c: 92:         _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"93
+[; ;main.c: 93:     }
+}
+[e :U 462 ]
+[e :U 461 ]
+"94
+[; ;main.c: 94: }
+[e :UE 459 ]
+}
+"96
+[; ;main.c: 96: void flashLED(unsigned int disp, int segs) {
+[v _flashLED `(v ~T0 @X0 1 ef2`ui`i ]
+{
+[e :U _flashLED ]
+[v _disp `ui ~T0 @X0 1 r1 ]
+[v _segs `i ~T0 @X0 1 r2 ]
+[f ]
+"97
+[; ;main.c: 97:     for (unsigned char i = 0; i < segs; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 467  ]
+[e :U 464 ]
+{
+"98
+[; ;main.c: 98:         PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"99
+[; ;main.c: 99:         PORTCbits.RC4 = (disp & 0b1);
+[e = . . _PORTCbits 0 4 -> & _disp -> -> 1 `i `ui `uc ]
+"100
+[; ;main.c: 100:         disp >>= 1;
+[e =>> _disp -> -> 1 `i `ui ]
+"101
+[; ;main.c: 101:         PORTCbits.RC5 = 1;
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"102
+[; ;main.c: 102:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 467 ]
+[e $ < -> _i `i _segs 464  ]
+[e :U 465 ]
+}
+"103
+[; ;main.c: 103:     PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"104
+[; ;main.c: 104:     PORTCbits.RC3 = 1;
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"105
+[; ;main.c: 105:     PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"106
+[; ;main.c: 106: }
+[e :UE 463 ]
+}
+"108
+[; ;main.c: 108: void shiftL(void) {
+[v _shiftL `(v ~T0 @X0 1 ef ]
+{
+[e :U _shiftL ]
+[f ]
+"109
+[; ;main.c: 109:     if (cursor & 0b1) cursor = cursor | 0b10000000000;
+[e $ ! != & -> _cursor `ui -> -> 1 `i `ui -> -> 0 `i `ui 469  ]
+[e = _cursor -> | -> _cursor `ui -> -> 1024 `i `ui `us ]
+[e :U 469 ]
+"110
+[; ;main.c: 110:     cursor >>= 1;
+[e =>> _cursor -> -> 1 `i `us ]
+"111
+[; ;main.c: 111:     if (cursor & 0b10000000000) cursor = cursor | 0b1;
+[e $ ! != & -> _cursor `ui -> -> 1024 `i `ui -> -> 0 `i `ui 470  ]
+[e = _cursor -> | -> _cursor `ui -> -> 1 `i `ui `us ]
+[e :U 470 ]
+"112
+[; ;main.c: 112:     tone(800);
+[e ( _tone (1 -> -> 800 `i `ui ]
+"113
+[; ;main.c: 113:     return;
+[e $UE 468  ]
+"114
+[; ;main.c: 114: }
+[e :UE 468 ]
+}
+"116
+[; ;main.c: 116: void shiftR(void) {
+[v _shiftR `(v ~T0 @X0 1 ef ]
+{
+[e :U _shiftR ]
+[f ]
+"117
+[; ;main.c: 117:     if (cursor & 0b1) cursor = cursor | 0b100000000000;
+[e $ ! != & -> _cursor `ui -> -> 1 `i `ui -> -> 0 `i `ui 472  ]
+[e = _cursor -> | -> _cursor `ui -> -> 2048 `i `ui `us ]
+[e :U 472 ]
+"118
+[; ;main.c: 118:     cursor <<= 1;
+[e =<< _cursor -> -> 1 `i `us ]
+"119
+[; ;main.c: 119:     if (cursor & 0b10000000000) cursor = cursor | 0b1;
+[e $ ! != & -> _cursor `ui -> -> 1024 `i `ui -> -> 0 `i `ui 473  ]
+[e = _cursor -> | -> _cursor `ui -> -> 1 `i `ui `us ]
+[e :U 473 ]
+"120
+[; ;main.c: 120:     tone(800);
+[e ( _tone (1 -> -> 800 `i `ui ]
+"121
+[; ;main.c: 121:     return;
+[e $UE 471  ]
+"122
+[; ;main.c: 122: }
+[e :UE 471 ]
+}
+"124
+[; ;main.c: 124: void shiftInv() {
+[v _shiftInv `(v ~T0 @X0 1 ef ]
+{
+[e :U _shiftInv ]
+[f ]
+"125
+[; ;main.c: 125:     shiftToL = !shiftToL;
+[e = _shiftToL -> -> ! != -> _shiftToL `i -> 0 `i `i `a ]
+"126
+[; ;main.c: 126:     return;
+[e $UE 474  ]
+"127
+[; ;main.c: 127: }
+[e :UE 474 ]
+}
+"129
+[; ;main.c: 129: void flashing(void) {
+[v _flashing `(v ~T0 @X0 1 ef ]
+{
+[e :U _flashing ]
+[f ]
+"130
+[; ;main.c: 130:     static uint16_t bdisp = 0;
+[v F3874 `us ~T0 @X0 1 s bdisp ]
+[i F3874
+-> -> 0 `i `us
+]
+"131
+[; ;main.c: 131:     uint16_t nowdisp = (cursor << 5) | (0b11100 >> (3 - life)) & 0b11100 | great << 1 | gameflag;
+[v _nowdisp `us ~T0 @X0 1 a ]
+[e = _nowdisp -> | | | << -> _cursor `ui -> 5 `i -> & >> -> 28 `i - -> 3 `i -> _life `i -> 28 `i `ui -> << -> _great `i -> 1 `i `ui -> _gameflag `ui `us ]
+"132
+[; ;main.c: 132:     if (nowdisp != bdisp)flashLED(nowdisp, 15);
+[e $ ! != -> _nowdisp `ui -> F3874 `ui 476  ]
+[e ( _flashLED (2 , -> _nowdisp `ui -> 15 `i ]
+[e :U 476 ]
+"133
+[; ;main.c: 133:     bdisp = nowdisp;
+[e = F3874 _nowdisp ]
+"134
+[; ;main.c: 134:     return;
+[e $UE 475  ]
+"135
+[; ;main.c: 135: }
+[e :UE 475 ]
+}
+"151
+[; ;main.c: 151: void dispExact(void) {
+[v _dispExact `(v ~T0 @X0 1 ef ]
+{
+[e :U _dispExact ]
+[f ]
+"152
+[; ;main.c: 152:     noTone();
+[e ( _noTone ..  ]
+"153
+[; ;main.c: 153:     flashLED(0, 15);
+[e ( _flashLED (2 , -> -> 0 `i `ui -> 15 `i ]
+"154
+[; ;main.c: 154:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"155
+[; ;main.c: 155:     for (uint8_t i = 0, m = 0b11000; i < 6; i++, m = ~m) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v _m `uc ~T0 @X0 1 a ]
+[e = _m -> -> 24 `i `uc ]
+[e $ < -> _i `i -> 6 `i 478  ]
+[e $U 479  ]
+[e :U 478 ]
+{
+"156
+[; ;main.c: 156:         flashLED(0b100000000100000 | (m & 0b000000000011100 | 0b00100), 15);
+[e ( _flashLED (2 , -> | -> 16416 `i | & -> _m `i -> 28 `i -> 4 `i `ui -> 15 `i ]
+"157
+[; ;main.c: 157:         tone(200);
+[e ( _tone (1 -> -> 200 `i `ui ]
+"158
+[; ;main.c: 158:         _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"159
+[; ;main.c: 159:         noTone();
+[e ( _noTone ..  ]
+"160
+[; ;main.c: 160:         _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"161
+[; ;main.c: 161:     }
+}
+[e ; ++ _i -> -> 1 `i `uc = _m -> ~ -> _m `i `uc ]
+[e $ < -> _i `i -> 6 `i 478  ]
+[e :U 479 ]
+}
+"162
+[; ;main.c: 162:     for (uint8_t i = 0, m = 0b10000; i < 6; i++, m = ~m) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v _m `uc ~T0 @X0 1 a ]
+[e = _m -> -> 16 `i `uc ]
+[e $ < -> _i `i -> 6 `i 481  ]
+[e $U 482  ]
+[e :U 481 ]
+{
+"163
+[; ;main.c: 163:         flashLED(0b011000011000000 | (m & 0b000000000011100 | 0b01100), 15);
+[e ( _flashLED (2 , -> | -> 12480 `i | & -> _m `i -> 28 `i -> 12 `i `ui -> 15 `i ]
+"164
+[; ;main.c: 164:         tone(800);
+[e ( _tone (1 -> -> 800 `i `ui ]
+"165
+[; ;main.c: 165:         _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"166
+[; ;main.c: 166:         noTone();
+[e ( _noTone ..  ]
+"167
+[; ;main.c: 167:         _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"168
+[; ;main.c: 168:     }
+}
+[e ; ++ _i -> -> 1 `i `uc = _m -> ~ -> _m `i `uc ]
+[e $ < -> _i `i -> 6 `i 481  ]
+[e :U 482 ]
+}
+"169
+[; ;main.c: 169:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"170
+[; ;main.c: 170:     flashLED(0b000111100000000, 15);
+[e ( _flashLED (2 , -> -> 3840 `i `ui -> 15 `i ]
+"171
+[; ;main.c: 171:     tone(1600);
+[e ( _tone (1 -> -> 1600 `i `ui ]
+"172
+[; ;main.c: 172:     _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"173
+[; ;main.c: 173:     for (uint16_t i = 0, disp = 0b000111100000000; i < 8; i++, disp = ~disp) {
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[v _disp `us ~T0 @X0 1 a ]
+[e = _disp -> -> 3840 `i `us ]
+[e $ < -> _i `ui -> -> 8 `i `ui 484  ]
+[e $U 485  ]
+[e :U 484 ]
+{
+"174
+[; ;main.c: 174:         flashLED((disp & 0b000111100000011) | 0b11100, 15);
+[e ( _flashLED (2 , | & -> _disp `ui -> -> 3843 `i `ui -> -> 28 `i `ui -> 15 `i ]
+"175
+[; ;main.c: 175:         noTone();
+[e ( _noTone ..  ]
+"176
+[; ;main.c: 176:         _delay((unsigned long)((200)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"177
+[; ;main.c: 177:         tone(1600);
+[e ( _tone (1 -> -> 1600 `i `ui ]
+"178
+[; ;main.c: 178:         _delay((unsigned long)((200)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"179
+[; ;main.c: 179:     }
+}
+[e ; ++ _i -> -> 1 `i `us = _disp -> ~ -> _disp `ui `us ]
+[e $ < -> _i `ui -> -> 8 `i `ui 484  ]
+[e :U 485 ]
+}
+"180
+[; ;main.c: 180:     noTone();
+[e ( _noTone ..  ]
+"181
+[; ;main.c: 181:     return;
+[e $UE 477  ]
+"182
+[; ;main.c: 182: }
+[e :UE 477 ]
+}
+"184
+[; ;main.c: 184: void start(void) {
+[v _start `(v ~T0 @X0 1 ef ]
+{
+[e :U _start ]
+[f ]
+"185
+[; ;main.c: 185:     tone(523);
+[e ( _tone (1 -> -> 523 `i `ui ]
+"186
+[; ;main.c: 186:     _delay((unsigned long)((250)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"187
+[; ;main.c: 187:     noTone();
+[e ( _noTone ..  ]
+"188
+[; ;main.c: 188:     _delay((unsigned long)((125)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 125 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"189
+[; ;main.c: 189:     tone(523);
+[e ( _tone (1 -> -> 523 `i `ui ]
+"190
+[; ;main.c: 190:     _delay((unsigned long)((250)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"191
+[; ;main.c: 191:     tone(587);
+[e ( _tone (1 -> -> 587 `i `ui ]
+"192
+[; ;main.c: 192:     _delay((unsigned long)((250)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"193
+[; ;main.c: 193:     tone(391);
+[e ( _tone (1 -> -> 391 `i `ui ]
+"194
+[; ;main.c: 194:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"195
+[; ;main.c: 195:     inloop = 1;
+[e = _inloop -> -> 1 `i `a ]
+"196
+[; ;main.c: 196:     gameflag = 1;
+[e = _gameflag -> -> 1 `i `a ]
+"197
+[; ;main.c: 197:     return;
+[e $UE 487  ]
+"198
+[; ;main.c: 198: }
+[e :UE 487 ]
+}
+"200
+[; ;main.c: 200: void collect(void) {
+[v _collect `(v ~T0 @X0 1 ef ]
+{
+[e :U _collect ]
+[f ]
+"201
+[; ;main.c: 201:     for (uint8_t i = 0; i < 10; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 10 `i 489  ]
+[e $U 490  ]
+[e :U 489 ]
+{
+"202
+[; ;main.c: 202:         great = !great;
+[e = _great -> -> ! != -> _great `i -> 0 `i `i `a ]
+"203
+[; ;main.c: 203:         flashing();
+[e ( _flashing ..  ]
+"204
+[; ;main.c: 204:         tone(2000);
+[e ( _tone (1 -> -> 2000 `i `ui ]
+"205
+[; ;main.c: 205:         _delay((unsigned long)((17)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 17 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"206
+[; ;main.c: 206:         great = !great;
+[e = _great -> -> ! != -> _great `i -> 0 `i `i `a ]
+"207
+[; ;main.c: 207:         flashing();
+[e ( _flashing ..  ]
+"208
+[; ;main.c: 208:         tone(1000);
+[e ( _tone (1 -> -> 1000 `i `ui ]
+"209
+[; ;main.c: 209:         _delay((unsigned long)((17)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 17 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"210
+[; ;main.c: 210:         great = !great;
+[e = _great -> -> ! != -> _great `i -> 0 `i `i `a ]
+"211
+[; ;main.c: 211:         flashing();
+[e ( _flashing ..  ]
+"212
+[; ;main.c: 212:         tone(4000);
+[e ( _tone (1 -> -> 4000 `i `ui ]
+"213
+[; ;main.c: 213:         _delay((unsigned long)((16)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"214
+[; ;main.c: 214:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 10 `i 489  ]
+[e :U 490 ]
+}
+"215
+[; ;main.c: 215:     noTone();
+[e ( _noTone ..  ]
+"216
+[; ;main.c: 216:     if (velocity != 1)velocity--;
+[e $ ! != -> _velocity `ui -> -> 1 `i `ui 492  ]
+[e -- _velocity -> -> 1 `i `us ]
+[e :U 492 ]
+"217
+[; ;main.c: 217:     point++;
+[e ++ _point -> -> 1 `i `us ]
+"219
+[; ;main.c: 219:     return;
+[e $UE 488  ]
+"220
+[; ;main.c: 220: }
+[e :UE 488 ]
+}
+"222
+[; ;main.c: 222: void incollect(void) {
+[v _incollect `(v ~T0 @X0 1 ef ]
+{
+[e :U _incollect ]
+[f ]
+"223
+[; ;main.c: 223:     for (uint8_t i = 0; i < 10; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 10 `i 494  ]
+[e $U 495  ]
+[e :U 494 ]
+{
+"224
+[; ;main.c: 224:         tone(500);
+[e ( _tone (1 -> -> 500 `i `ui ]
+"225
+[; ;main.c: 225:         _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"226
+[; ;main.c: 226:         tone(200);
+[e ( _tone (1 -> -> 200 `i `ui ]
+"227
+[; ;main.c: 227:         _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"228
+[; ;main.c: 228:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 10 `i 494  ]
+[e :U 495 ]
+}
+"229
+[; ;main.c: 229:     return;
+[e $UE 493  ]
+"230
+[; ;main.c: 230: }
+[e :UE 493 ]
+}
+"232
+[; ;main.c: 232: void checkHit(void) {
+[v _checkHit `(v ~T0 @X0 1 ef ]
+{
+[e :U _checkHit ]
+[f ]
+"233
+[; ;main.c: 233:     if (cursor & 0b0001111000) {
+[e $ ! != & -> _cursor `ui -> -> 120 `i `ui -> -> 0 `i `ui 498  ]
+{
+"234
+[; ;main.c: 234:         collect();
+[e ( _collect ..  ]
+"235
+[; ;main.c: 235:         if (great && life < 3) {
+[e $ ! && != -> _great `i -> 0 `i < -> _life `i -> 3 `i 499  ]
+{
+"236
+[; ;main.c: 236:             life++;
+[e ++ _life -> -> 1 `i `c ]
+"237
+[; ;main.c: 237:         }
+}
+[e :U 499 ]
+"238
+[; ;main.c: 238:         great = !great;
+[e = _great -> -> ! != -> _great `i -> 0 `i `i `a ]
+"239
+[; ;main.c: 239:     } else {
+}
+[e $U 500  ]
+[e :U 498 ]
+{
+"240
+[; ;main.c: 240:         incollect();
+[e ( _incollect ..  ]
+"241
+[; ;main.c: 241:         great = 0;
+[e = _great -> -> 0 `i `a ]
+"242
+[; ;main.c: 242:         if (cursor & 0b1000000001) {
+[e $ ! != & -> _cursor `ui -> -> 513 `i `ui -> -> 0 `i `ui 501  ]
+{
+"243
+[; ;main.c: 243:             life -= 2;
+[e =- _life -> -> 2 `i `c ]
+"244
+[; ;main.c: 244:         } else {
+}
+[e $U 502  ]
+[e :U 501 ]
+{
+"245
+[; ;main.c: 245:             life--;
+[e -- _life -> -> 1 `i `c ]
+"246
+[; ;main.c: 246:         }
+}
+[e :U 502 ]
+"247
+[; ;main.c: 247:         if (life < 0)gameflag = 0;
+[e $ ! < -> _life `i -> 0 `i 503  ]
+[e = _gameflag -> -> 0 `i `a ]
+[e :U 503 ]
+"248
+[; ;main.c: 248:     }
+}
+[e :U 500 ]
+"249
+[; ;main.c: 249: }
+[e :UE 497 ]
+}
+"251
+[; ;main.c: 251: void result() {
+[v _result `(v ~T0 @X0 1 ef ]
+{
+[e :U _result ]
+[f ]
+"252
+[; ;main.c: 252:     flashLED((0b1111111111000 >> (15 - (point / 10) % 10) & 0b111111111100000), 15);
+[e ( _flashLED (2 , -> & >> -> 8184 `i - -> -> 15 `i `ui % / -> _point `ui -> -> 10 `i `ui -> -> 10 `i `ui -> 32736 `i `ui -> 15 `i ]
+"287
+[; ;main.c: 287:     tone(523);
+[e ( _tone (1 -> -> 523 `i `ui ]
+"288
+[; ;main.c: 288:     _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"289
+[; ;main.c: 289:     tone(698);
+[e ( _tone (1 -> -> 698 `i `ui ]
+"290
+[; ;main.c: 290:     _delay((unsigned long)((1500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"291
+[; ;main.c: 291:     tone(523);
+[e ( _tone (1 -> -> 523 `i `ui ]
+"292
+[; ;main.c: 292:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"293
+[; ;main.c: 293:     tone(698);
+[e ( _tone (1 -> -> 698 `i `ui ]
+"294
+[; ;main.c: 294:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"295
+[; ;main.c: 295:     tone(784);
+[e ( _tone (1 -> -> 784 `i `ui ]
+"296
+[; ;main.c: 296:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"297
+[; ;main.c: 297:     tone(831);
+[e ( _tone (1 -> -> 831 `i `ui ]
+"298
+[; ;main.c: 298:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"299
+[; ;main.c: 299:     noTone();
+[e ( _noTone ..  ]
+"300
+[; ;main.c: 300:     _delay((unsigned long)((200)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"301
+[; ;main.c: 301:     tone(698);
+[e ( _tone (1 -> -> 698 `i `ui ]
+"302
+[; ;main.c: 302:     _delay((unsigned long)((200)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"303
+[; ;main.c: 303:     tone(784);
+[e ( _tone (1 -> -> 784 `i `ui ]
+"304
+[; ;main.c: 304:     _delay((unsigned long)((2000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"306
+[; ;main.c: 306:     noTone();
+[e ( _noTone ..  ]
+"307
+[; ;main.c: 307:     _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"308
+[; ;main.c: 308:     point = 0;
+[e = _point -> -> 0 `i `us ]
+"309
+[; ;main.c: 309:     return;
+[e $UE 504  ]
+"310
+[; ;main.c: 310: }
+[e :UE 504 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"312
+[; ;main.c: 312: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"314
+[; ;main.c: 314:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"331
+[; ;main.c: 331:     tone(2000);
+[e ( _tone (1 -> -> 2000 `i `ui ]
+"332
+[; ;main.c: 332:     _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"333
+[; ;main.c: 333:     tone(1000);
+[e ( _tone (1 -> -> 1000 `i `ui ]
+"334
+[; ;main.c: 334:     _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"335
+[; ;main.c: 335:     noTone();
+[e ( _noTone ..  ]
+"337
+[; ;main.c: 337:     while (1) {
+[e :U 507 ]
+{
+"339
+[; ;main.c: 339:         target = 0;
+[e = _target -> -> 0 `i `us ]
+"340
+[; ;main.c: 340:         cursor = 0;
+[e = _cursor -> -> 0 `i `us ]
+"341
+[; ;main.c: 341:         velocity = 50;
+[e = _velocity -> -> 50 `i `us ]
+"342
+[; ;main.c: 342:         life = 3;
+[e = _life -> -> 3 `i `c ]
+"343
+[; ;main.c: 343:         point = 0;
+[e = _point -> -> 0 `i `us ]
+"344
+[; ;main.c: 344:         great = 0;
+[e = _great -> -> 0 `i `a ]
+"345
+[; ;main.c: 345:         shiftToL = 0;
+[e = _shiftToL -> -> 0 `i `a ]
+"346
+[; ;main.c: 346:         flashLED(cursor, 15);
+[e ( _flashLED (2 , -> _cursor `ui -> 15 `i ]
+"349
+[; ;main.c: 349:         while (!gameflag) {
+[e $U 509  ]
+[e :U 510 ]
+{
+"350
+[; ;main.c: 350:             R_BTN_run(start, ((void*)0));
+[e ( _R_BTN_run (2 , -> &U _start `*F3891 -> -> -> 0 `i `*v `*F3893 ]
+"351
+[; ;main.c: 351:             B_BTN_run(start, ((void*)0));
+[e ( _B_BTN_run (2 , -> &U _start `*F3894 -> -> -> 0 `i `*v `*F3896 ]
+"352
+[; ;main.c: 352:             if (cursor > 32767) {
+[e $ ! > -> _cursor `ui -> -> 32767 `i `ui 512  ]
+{
+"353
+[; ;main.c: 353:                 cursor >>= random_TMR0(32) % 16;
+[e =>> _cursor -> % -> ( _random_TMR0 (1 -> -> 32 `i `uc `ui -> -> 16 `i `ui `us ]
+"354
+[; ;main.c: 354:             } else {
+}
+[e $U 513  ]
+[e :U 512 ]
+{
+"355
+[; ;main.c: 355:                 cursor += random_TMR0(32) % 27;
+[e =+ _cursor -> % -> ( _random_TMR0 (1 -> -> 32 `i `uc `ui -> -> 27 `i `ui `us ]
+"356
+[; ;main.c: 356:                 cursor <<= random_TMR0(32) % 2;
+[e =<< _cursor -> % -> ( _random_TMR0 (1 -> -> 32 `i `uc `ui -> -> 2 `i `ui `us ]
+"357
+[; ;main.c: 357:             }
+}
+[e :U 513 ]
+"358
+[; ;main.c: 358:             tone(cursor & 0xFFF);
+[e ( _tone (1 & -> _cursor `ui -> -> 4095 `i `ui ]
+"359
+[; ;main.c: 359:             _delay((unsigned long)((25)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"360
+[; ;main.c: 360:             noTone();
+[e ( _noTone ..  ]
+"361
+[; ;main.c: 361:             _delay((unsigned long)((25)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"362
+[; ;main.c: 362:             flashLED(cursor, 15);
+[e ( _flashLED (2 , -> _cursor `ui -> 15 `i ]
+"363
+[; ;main.c: 363:         }
+}
+[e :U 509 ]
+"349
+[; ;main.c: 349:         while (!gameflag) {
+[e $ ! != -> _gameflag `i -> 0 `i 510  ]
+[e :U 511 ]
+"364
+[; ;main.c: 364:         noTone();
+[e ( _noTone ..  ]
+"367
+[; ;main.c: 367:         cursor = 0;
+[e = _cursor -> -> 0 `i `us ]
+"368
+[; ;main.c: 368:         dispExact();
+[e ( _dispExact ..  ]
+"370
+[; ;main.c: 370:         while (gameflag) {
+[e $U 514  ]
+[e :U 515 ]
+{
+"371
+[; ;main.c: 371:             cursor = 0b1000000000;
+[e = _cursor -> -> 512 `i `us ]
+"372
+[; ;main.c: 372:             while (PORTCbits.RC0) {
+[e $U 517  ]
+[e :U 518 ]
+{
+"373
+[; ;main.c: 373:                 B_BTN_run(shiftInv, ((void*)0));
+[e ( _B_BTN_run (2 , &U _shiftInv -> -> -> 0 `i `*v `*F3898 ]
+"374
+[; ;main.c: 374:                 if (shiftToL) {
+[e $ ! != -> _shiftToL `i -> 0 `i 520  ]
+{
+"375
+[; ;main.c: 375:                     shiftL();
+[e ( _shiftL ..  ]
+"376
+[; ;main.c: 376:                 } else {
+}
+[e $U 521  ]
+[e :U 520 ]
+{
+"377
+[; ;main.c: 377:                     shiftR();
+[e ( _shiftR ..  ]
+"378
+[; ;main.c: 378:                 }
+}
+[e :U 521 ]
+"379
+[; ;main.c: 379:                 flashing();
+[e ( _flashing ..  ]
+"380
+[; ;main.c: 380:                 tone(800);
+[e ( _tone (1 -> -> 800 `i `ui ]
+"381
+[; ;main.c: 381:                 for (uint16_t i = 0; i < velocity; i++)_delay((unsigned long)((1)*(16000000/4000.0)));
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 525  ]
+[e :U 522 ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ++ _i -> -> 1 `i `us ]
+[e :U 525 ]
+[e $ < -> _i `ui -> _velocity `ui 522  ]
+[e :U 523 ]
+}
+"382
+[; ;main.c: 382:                 noTone();
+[e ( _noTone ..  ]
+"383
+[; ;main.c: 383:                 for (uint16_t i = 0; i < velocity; i++)_delay((unsigned long)((1)*(16000000/4000.0)));
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 529  ]
+[e :U 526 ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ++ _i -> -> 1 `i `us ]
+[e :U 529 ]
+[e $ < -> _i `ui -> _velocity `ui 526  ]
+[e :U 527 ]
+}
+"384
+[; ;main.c: 384:             }
+}
+[e :U 517 ]
+"372
+[; ;main.c: 372:             while (PORTCbits.RC0) {
+[e $ != -> . . _PORTCbits 0 0 `i -> 0 `i 518  ]
+[e :U 519 ]
+"385
+[; ;main.c: 385:             for (uint16_t t = velocity; t <= 100; t += random_TMR0(8) % 15) {
+{
+[v _t `us ~T0 @X0 1 a ]
+[e = _t _velocity ]
+[e $ <= -> _t `ui -> -> 100 `i `ui 530  ]
+[e $U 531  ]
+[e :U 530 ]
+{
+"386
+[; ;main.c: 386:                 if (shiftToL) {
+[e $ ! != -> _shiftToL `i -> 0 `i 533  ]
+{
+"387
+[; ;main.c: 387:                     shiftL();
+[e ( _shiftL ..  ]
+"388
+[; ;main.c: 388:                 } else {
+}
+[e $U 534  ]
+[e :U 533 ]
+{
+"389
+[; ;main.c: 389:                     shiftR();
+[e ( _shiftR ..  ]
+"390
+[; ;main.c: 390:                 }
+}
+[e :U 534 ]
+"391
+[; ;main.c: 391:                 flashing();
+[e ( _flashing ..  ]
+"392
+[; ;main.c: 392:                 tone(800);
+[e ( _tone (1 -> -> 800 `i `ui ]
+"393
+[; ;main.c: 393:                 for (uint16_t i = 0; i < t; i++) _delay((unsigned long)((1)*(16000000/4000.0)));
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 538  ]
+[e :U 535 ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ++ _i -> -> 1 `i `us ]
+[e :U 538 ]
+[e $ < -> _i `ui -> _t `ui 535  ]
+[e :U 536 ]
+}
+"394
+[; ;main.c: 394:                 noTone();
+[e ( _noTone ..  ]
+"395
+[; ;main.c: 395:                 for (uint16_t i = 0; i < t; i++) _delay((unsigned long)((1)*(16000000/4000.0)));
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 542  ]
+[e :U 539 ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ++ _i -> -> 1 `i `us ]
+[e :U 542 ]
+[e $ < -> _i `ui -> _t `ui 539  ]
+[e :U 540 ]
+}
+"396
+[; ;main.c: 396:             }
+}
+[e =+ _t -> % -> ( _random_TMR0 (1 -> -> 8 `i `uc `ui -> -> 15 `i `ui `us ]
+[e $ <= -> _t `ui -> -> 100 `i `ui 530  ]
+[e :U 531 ]
+}
+"397
+[; ;main.c: 397:             checkHit();
+[e ( _checkHit ..  ]
+"398
+[; ;main.c: 398:         }
+}
+[e :U 514 ]
+"370
+[; ;main.c: 370:         while (gameflag) {
+[e $ != -> _gameflag `i -> 0 `i 515  ]
+[e :U 516 ]
+"399
+[; ;main.c: 399:         result();
+[e ( _result ..  ]
+"400
+[; ;main.c: 400:     }
+}
+[e :U 506 ]
+[e $U 507  ]
+[e :U 508 ]
+"401
+[; ;main.c: 401: }
+[e :UE 505 ]
 }

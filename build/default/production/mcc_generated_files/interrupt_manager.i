@@ -6221,6 +6221,8 @@ _Bool NCO1_GetOutputStatus(void);
     extern void (*TMR0_InterruptHandler)(void);
 # 274 "mcc_generated_files/tmr0.h"
     void TMR0_DefaultInterruptHandler(void);
+
+    extern _Bool TMR0flipper;
 # 58 "mcc_generated_files/mcc.h" 2
 # 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
